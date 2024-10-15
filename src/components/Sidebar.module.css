@@ -6,7 +6,3 @@
   @apply absolute -left-2 top-1/2 h-6 w-1 -translate-y-1/2 rounded-md bg-[#0969da];
   content: '';
 }
-
-.item:hover {
-  @apply bg-[#818b981a];
-}

@@ -22,7 +22,7 @@ export function Sidebar(props: SidebarProps) {
       </div>
       <ul className={`flex flex-col gap-1 ${classes.list}`}>
         <li
-          className={`w-full cursor-pointer rounded-md px-2 py-1.5 text-sm ${classes.item}`}
+          className="w-full cursor-pointer rounded-md px-2 py-1.5 text-sm hover:bg-[#818b981a]"
           data-active={!activeName ? '' : undefined}
           onClick={() => handleClick('')}
         >
@@ -34,7 +34,7 @@ export function Sidebar(props: SidebarProps) {
         {names.map((name) => (
           <li
             key={name}
-            className={`w-full cursor-pointer rounded-md px-2 py-1.5 text-sm ${classes.item}`}
+            className="w-full cursor-pointer rounded-md px-2 py-1.5 text-sm hover:bg-[#818b981a]"
             data-active={activeName === name ? '' : undefined}
             onClick={() => handleClick(name)}
           >
