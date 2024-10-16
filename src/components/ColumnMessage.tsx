@@ -1,39 +1,29 @@
-import type { WorkflowRun } from '../types'
+import { IconCircleCheckFilled } from '@tabler/icons-react'
+import type { WorkflowRun } from '../apis/actions'
 
 export interface ColumnMessageProps {
+  className?: string
   item: WorkflowRun
 }
 
-export function ColumnMessage({ item }: ColumnMessageProps) {
+export function ColumnMessage({ className = '', item }: ColumnMessageProps) {
   return (
-    <div className="w-6/12">
-      <div className="mb-1">
-        <span className="inline-block w-4"></span>
+    <div className={className}>
+      <div className="mb-1 flex items-center">
+        <span className="mr-2 inline-block w-5">
+          <IconCircleCheckFilled size={18} color="#1a7f37" />
+        </span>
         <a
-          className="font-semibold text-[#1f2328] hover:text-[#0969da] hover:underline"
+          className="font-semibold text-neutral-800 hover:text-blue-500 hover:underline"
           href={item.html_url}
         >
           {item.display_title}
         </a>
       </div>
-      <div className="text-xs text-[#59636e]">
-        <span className="inline-block w-4"></span>
-        <span className="font-semibold">Build </span>
+      <div className="text-xs text-gray-500">
+        <span className="mr-2 inline-block w-5"></span>
+        <span className="font-semibold">{item.name} </span>
         <span>#{item.run_number}: </span>
-        <span>Commit </span>
-        <a
-          className="underline"
-          href={`${item.head_repository.html_url}/commit/${item.head_commit.id}`}
-        >
-          {item.head_commit.id.slice(0, 7)}
-        </a>
-        <span> pushed by </span>
-        <a
-          className="hover:text-[#0969da]"
-          href={`https://github.com/${item.head_commit.committer.name}`}
-        >
-          {item.head_commit.committer.name}
-        </a>
       </div>
     </div>
   )
