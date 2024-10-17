@@ -20,7 +20,7 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
         <div className="p-4">{children}</div>
         <div className="flex justify-end p-4">
           <button
-            className="mr-2 rounded bg-blue-500 px-4 py-2 text-sm text-white"
+            className="mr-2 rounded border-[1px] border-gray-300 bg-gray-100 px-3 py-1 text-sm font-medium text-neutral-800"
             onClick={onClose}
           >
             Close

@@ -8,7 +8,7 @@ import { ColumnOptions } from './ColumnOptions'
 export function Table() {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ['runs'],
-    queryFn: actions.runs,
+    queryFn: actions.workflow_runs,
   })
 
   if (isPending) {
